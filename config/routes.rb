@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Following resource:
+  # CREATE
+  get('/followings/new', { :controller => 'followings', :action => 'new' })
+  get('/create_following', { :controller => 'followings', :action => 'create' })
+
+  # READ
+  get('/followings', { :controller => 'followings', :action => 'index' })
+  get('/followings/:id', { :controller => 'followings', :action => 'show' })
+
+  # UPDATE
+  get('/followings/:id/edit', { :controller => 'followings', :action => 'edit' })
+  get('/update_following/:id', { :controller => 'followings', :action => 'update' })
+
+  # DELETE
+  get('/delete_following/:id', { :controller => 'followings', :action => 'destroy' })
+  #------------------------------
+
   # Routes for the Favoriting resource:
   # CREATE
   get('/favoritings/new', { :controller => 'favoritings', :action => 'new' })
