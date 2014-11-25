@@ -91,4 +91,24 @@ Photo.all.each do |photo|
   end
 end
 
-puts "There are now #{Comment.count} comments in the database."
+puts "There are now #{Favoriting.count} favoritings in the database."
+
+followings_info = [
+  { :leader => "alex@example.com", :follower => "raghu@example.com" },
+  { :leader => "genevieve@example.com", :follower => "raghu@example.com" },
+  { :leader => "dan@example.com", :follower => "raghu@example.com" },
+  { :leader => "raghu@example.com", :follower => "dan@example.com" },
+  { :leader => "raghu@example.com", :follower => "arjun@example.com" },
+]
+
+followings_info.each do |following_hash|
+  leader = User.find_by({ :email => following_hash[:leader] })
+  follower = User.find_by({ :email => following_hash[:follower] })
+
+  following = Following.new
+  following.leader_id = leader.id
+  following.follower_id = follower.id
+  following.save
+end
+
+puts "There are now #{Following.count} followings in the database."
