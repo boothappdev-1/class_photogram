@@ -14,24 +14,6 @@ Rails.application.routes.draw do
 
   # DELETE
   get('/delete_following/:id', { :controller => 'followings', :action => 'destroy' })
-  #------------------------------
-
-  # Routes for the Favoriting resource:
-  # CREATE
-  get('/favoritings/new', { :controller => 'favoritings', :action => 'new' })
-  get('/create_favoriting', { :controller => 'favoritings', :action => 'create' })
-
-  # READ
-  get('/favoritings', { :controller => 'favoritings', :action => 'index' })
-  get('/favoritings/:id', { :controller => 'favoritings', :action => 'show' })
-
-  # UPDATE
-  get('/favoritings/:id/edit', { :controller => 'favoritings', :action => 'edit' })
-  get('/update_favoriting/:id', { :controller => 'favoritings', :action => 'update' })
-
-  # DELETE
-  get('/delete_favoriting/:id', { :controller => 'favoritings', :action => 'destroy' })
-  #------------------------------
 
   # Routes for the Comment resource:
   # CREATE
