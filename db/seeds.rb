@@ -17,6 +17,8 @@ user_emails = [
 user_emails.each do |email|
   user = User.new
   user.email = email
+  user.password = "12345678"
+  user.password_confirmation = "12345678"
   user.save
 end
 
