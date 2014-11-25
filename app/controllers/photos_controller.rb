@@ -1,6 +1,8 @@
 class PhotosController < ApplicationController
   def index
     @photos = Photo.order("created_at DESC")
+
+    session[:fruit] = "banana"
   end
 
   def show

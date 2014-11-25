@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   root("photos#index")
 
   # get("/", { :controller => "photos", :action => "index" })
