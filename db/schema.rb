@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125185023) do
+ActiveRecord::Schema.define(version: 20141125185312) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20141125185023) do
 
   create_table "favoritings", force: true do |t|
     t.integer  "photo_id"
-    t.integer  "favorited_by"
+    t.integer  "favorited_by_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
