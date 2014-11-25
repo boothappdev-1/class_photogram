@@ -23,8 +23,8 @@
       <tbody>
         <% @favoritings.each do |favoriting| %>
           <tr>
-            <td><%= favoriting.photo_id %></td>
-            <td><%= favoriting.favorited_by_id %></td>
+            <td><%= favoriting.photo.id %></td>
+            <td><%= favoriting.favorited_by.email %></td>
             <td>
               <a href="/favoritings/<%= favoriting.id %>" class="btn btn-primary">
                 <i class="fa fa-search-plus"></i>

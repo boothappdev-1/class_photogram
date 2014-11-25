@@ -32,6 +32,26 @@
           </a>
         </div>
       </dd>
+
+      <dt>Comments</dt>
+      <dd>
+        <ul>
+          <% @photo.comments.each do |comment| %>
+            <li>
+              <p><%= comment.content %> by <%= comment.commenter.email %></p>
+              <p><%= time_ago_in_words(comment.created_at) %> ago</p>
+            </li>
+          <% end %>
+        </ul>
+
+        <form action="/create_comment">
+          <input type="text" placeholder="content" name="content" class="form-control">
+          <input type="text" placeholder="commenter_id" name="commenter_id" class="form-control">
+          <input type="hidden" placeholder="photo_id" name="photo_id" class="form-control" value="<%= @photo.id %>">
+
+          <input type="submit">
+        </form>
+      </dd>
     </dl>
 
   </div>
