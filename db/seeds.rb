@@ -73,7 +73,7 @@ Photo.all.each do |photo|
     user = User.offset(rand(User.count)).first
     comment = Comment.new
     comment.photo_id = photo.id
-    comment.user_id = user.id
+    comment.commenter_id = user.id
     comment.content = "Comment about #{photo.caption} by #{user.email}"
     comment.save
   end
@@ -86,7 +86,7 @@ Photo.all.each do |photo|
     user = User.offset(rand(User.count)).first
     favoriting = Favoriting.new
     favoriting.photo_id = photo.id
-    favoriting.user_id = user.id
+    favoriting.favorited_by_id = user.id
     favoriting.save
   end
 end
